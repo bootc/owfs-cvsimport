@@ -26,9 +26,8 @@ $Id$
  *   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  */
 
-#include "owlib_config.h"
+#include "owfs_config.h"
 #include "ow.h" // for libow
-#include "owhttpd_config.h"
 #include "owhttpd.h" // httpd-specific
 /*
  * Set these as the user and group id's you want chttpd to use when

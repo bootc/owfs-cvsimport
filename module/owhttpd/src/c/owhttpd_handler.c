@@ -17,8 +17,7 @@ $Id$
 #define DEVTABLE "BGCOLOR='#DDDDDD' BORDER='1'"
 #define VALTABLE "BGCOLOR='#DDDDDD' BORDER='1'"
 
-#include "owhttpd_config.h"
-#include "owlib_config.h"
+#include "owfs_config.h"
 #include "ow.h"
 #include "owhttpd.h"
 

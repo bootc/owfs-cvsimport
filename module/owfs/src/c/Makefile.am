@@ -4,6 +4,7 @@ bin_PROGRAMS = owfs
 owfs_SOURCES = owfs.c owfs_callback.c
 
 CFLAGS = -I../include \
+         -I../../../owlib/src/include \
          -fexceptions \
          -Wall \
          -W \

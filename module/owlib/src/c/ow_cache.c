@@ -11,7 +11,7 @@ $Id$
 
 #ifdef OW_CACHE
 
-#include "owlib_config.h"
+#include "owfs_config.h"
 #include "ow.h"
 
 /* Defines for db->open */

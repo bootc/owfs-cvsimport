@@ -13,7 +13,7 @@ $ID: $
 #include <sys/stat.h>
 #include <string.h>
 
-#include "owlib_config.h"
+#include "owfs_config.h"
 #include "ow.h"
 
 

@@ -11,7 +11,7 @@ $Id$
 
 #include <stdlib.h>
 
-#include "owlib_config.h"
+#include "owfs_config.h"
 #include "ow_devices.h"
 
 static int FS_ParsedNameSub( const char * const path , struct parsedname * pn ) ;

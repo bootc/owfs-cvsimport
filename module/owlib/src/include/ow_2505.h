@@ -12,8 +12,8 @@ $Id$
 #ifndef OW_2505_H
 #define OW_2505_H
 
-#ifndef OWLIB_CONFIG_H
-#error Please make sure owlib_config.h is included *before* this header file
+#ifndef OWFS_CONFIG_H
+#error Please make sure owfs_config.h is included *before* this header file
 #endif
 #include "ow_xxxx.h"
 

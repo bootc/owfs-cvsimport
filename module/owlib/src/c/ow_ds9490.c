@@ -21,7 +21,7 @@ $Id$
 
 #ifdef OW_USB /* conditional inclusion of USB */
 
-#include "owlib_config.h"
+#include "owfs_config.h"
 #include "ow.h"
 #include <usb.h>
 

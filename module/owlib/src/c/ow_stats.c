@@ -42,7 +42,7 @@ $Id$
 /* Stats are a pseudo-device -- they are a file-system entry and handled as such,
      but have a different caching type to distiguish their handling */
 
-#include "owlib_config.h"
+#include "owfs_config.h"
 #include "ow_stats.h"
 
 /* ------- Prototypes ----------- */

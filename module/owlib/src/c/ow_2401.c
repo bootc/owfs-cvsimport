@@ -46,7 +46,7 @@ $Id$
 
     /* All from ow_xxxx.c file */
 
-#include "owlib_config.h"
+#include "owfs_config.h"
 #include "ow_2401.h"
 
 /* ------- Structures ----------- */

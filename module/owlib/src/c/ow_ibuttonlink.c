@@ -9,7 +9,7 @@ $Id$
 	1wire/iButton system from Dallas Semiconductor
 */
 
-#include "owlib_config.h"
+#include "owfs_config.h"
 #include "ow.h"
 
 int LI_reset( void )

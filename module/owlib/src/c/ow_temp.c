@@ -11,7 +11,7 @@ $Id$
 
 #include <linux/stddef.h>
 
-#include "owlib_config.h"
+#include "owfs_config.h"
 #include "ow.h"
 
 /* Temperture Conversion routines  */

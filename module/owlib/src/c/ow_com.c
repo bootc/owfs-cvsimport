@@ -17,7 +17,7 @@ $Id$
 #include <errno.h>
 #include <sys/time.h> /* for gettimeofday */
 
-#include "owlib_config.h"
+#include "owfs_config.h"
 #include "ow.h"
 
 /* Global variables */

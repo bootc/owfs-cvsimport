@@ -11,7 +11,7 @@ $Id$
 
 /* ow_opt -- owlib specific command line options processing */
 
-#include "owlib_config.h"
+#include "owfs_config.h"
 #include "ow.h"
 
 const struct option owopts_long[] = {

@@ -8,18 +8,12 @@
 /* Define to 1 if you have the `alarm' function. */
 #undef HAVE_ALARM
 
-/* Define to 1 if you have the <arpa/inet.h> header file. */
-#undef HAVE_ARPA_INET_H
-
 /* Define to 1 if you have the <dirent.h> header file, and it defines `DIR'.
    */
 #undef HAVE_DIRENT_H
 
 /* Define to 1 if you have the <dlfcn.h> header file. */
 #undef HAVE_DLFCN_H
-
-/* Define to 1 if you don't have `vprintf' but do have `_doprnt.' */
-#undef HAVE_DOPRNT
 
 /* Define to 1 if you have the <fcntl.h> header file. */
 #undef HAVE_FCNTL_H
@@ -30,8 +24,14 @@
 /* Define to 1 if you have the <inttypes.h> header file. */
 #undef HAVE_INTTYPES_H
 
-/* Define to 1 if you have the `ow' library (-low). */
-#undef HAVE_LIBOW
+/* Define to 1 if you have the `fuse' library (-lfuse). */
+#undef HAVE_LIBFUSE
+
+/* Define to 1 if you have the `usb' library (-lusb). */
+#undef HAVE_LIBUSB
+
+/* Define to 1 if you have the <limits.h> header file. */
+#undef HAVE_LIMITS_H
 
 /* Define to 1 if your system has a GNU libc compatible `malloc' function, and
    to 0 otherwise. */
@@ -49,17 +49,14 @@
 /* Define to 1 if you have the <ndir.h> header file, and it defines `DIR'. */
 #undef HAVE_NDIR_H
 
-/* Define to 1 if you have the <netinet/in.h> header file. */
-#undef HAVE_NETINET_IN_H
-
-/* Define to 1 if you have the <ow_stub.h> header file. */
-#undef HAVE_OW_STUB_H
-
 /* Define to 1 if you have the `select' function. */
 #undef HAVE_SELECT
 
 /* Define to 1 if you have the `socket' function. */
 #undef HAVE_SOCKET
+
+/* Define to 1 if stdbool.h conforms to C99. */
+#undef HAVE_STDBOOL_H
 
 /* Define to 1 if you have the <stdint.h> header file. */
 #undef HAVE_STDINT_H
@@ -85,6 +82,9 @@
 /* Define to 1 if you have the `strtol' function. */
 #undef HAVE_STRTOL
 
+/* Define to 1 if you have the `strtoul' function. */
+#undef HAVE_STRTOUL
+
 /* Define to 1 if you have the <syslog.h> header file. */
 #undef HAVE_SYSLOG_H
 
@@ -99,6 +99,9 @@
    */
 #undef HAVE_SYS_NDIR_H
 
+/* Define to 1 if you have the <sys/select.h> header file. */
+#undef HAVE_SYS_SELECT_H
+
 /* Define to 1 if you have the <sys/socket.h> header file. */
 #undef HAVE_SYS_SOCKET_H
 
@@ -110,9 +113,6 @@
 
 /* Define to 1 if you have the <sys/types.h> header file. */
 #undef HAVE_SYS_TYPES_H
-
-/* Define to 1 if you have <sys/wait.h> that is POSIX.1 compatible. */
-#undef HAVE_SYS_WAIT_H
 
 /* Define to 1 if you have the <termios.h> header file. */
 #undef HAVE_TERMIOS_H
@@ -126,14 +126,14 @@
 /* Define to 1 if you have the <vfork.h> header file. */
 #undef HAVE_VFORK_H
 
-/* Define to 1 if you have the `vprintf' function. */
-#undef HAVE_VPRINTF
-
 /* Define to 1 if `fork' works. */
 #undef HAVE_WORKING_FORK
 
 /* Define to 1 if `vfork' works. */
 #undef HAVE_WORKING_VFORK
+
+/* Define to 1 if the system has the type `_Bool'. */
+#undef HAVE__BOOL
 
 /* Name of package */
 #undef PACKAGE
@@ -155,6 +155,15 @@
 
 /* Define as the return type of signal handlers (`int' or `void'). */
 #undef RETSIGTYPE
+
+/* Define to the type of arg 1 for `select'. */
+#undef SELECT_TYPE_ARG1
+
+/* Define to the type of args 2, 3 and 4 for `select'. */
+#undef SELECT_TYPE_ARG234
+
+/* Define to the type of arg 5 for `select'. */
+#undef SELECT_TYPE_ARG5
 
 /* Define to 1 if you have the ANSI C header files. */
 #undef STDC_HEADERS

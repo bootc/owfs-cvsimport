@@ -237,7 +237,7 @@ AC_CONFIG_FILES([
 	src/Makefile
 	src/include/Makefile
 	src/rpm/Makefile
-	src/rpm/owlib.spec
+	src/rpm/owfs.spec
 	src/scripts/Makefile
 ])
 AC_OUTPUT

@@ -42,12 +42,12 @@ sub PerModule {
   ConfigureAC(@v) ;
 
   # make process
-  printf "RELEASE -- make clean\n" ;
-  system("make","clean") ;
-  printf "RELEASE -- make distclean\n" ;
-  system("make","distclean") ;
+ # printf "RELEASE -- make clean\n" ;
+ # system("make","clean") ;
   printf "RELEASE -- bootstrapping\n" ;
   `./bootstrap` ;
+  printf "RELEASE -- make install\n" ;
+  system("make","install") ;
   printf "RELEASE -- make tarball\n" ;
   system("make","dist") ;
   printf "RELEASE -- make rpm\n" ;

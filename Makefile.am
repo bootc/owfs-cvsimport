@@ -1,7 +1,5 @@
-## Process this file with automake to produce Makefile.in
+SUBDIRS = src
 
-SUBDIRS = @subdirs@
+clean-generic:
 
-EXTRA_DIST =			\
-	fuse.spec		\
-	fuse_redhat.spec
+	rm -f *~ .*~

@@ -109,4 +109,7 @@ AC_OUTPUT([Makefile
            src/Makefile
            src/c/Makefile
            src/include/Makefile
+           src/rpm/Makefile
+           src/rpm/owfs.spec
+           src/scripts/Makefile
 ])

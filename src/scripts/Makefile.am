@@ -1,0 +1,3 @@
+clean-generic:
+
+	rm -f *~ .*~

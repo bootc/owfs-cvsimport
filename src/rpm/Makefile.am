@@ -2,5 +2,5 @@
 
 clean-generic:
 
-	@RM@ -rf *~
+	rm -rf *~
 

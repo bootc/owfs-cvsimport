@@ -1,26 +1,44 @@
-%define kernelversion %(uname -r)
-%define fusemoduledir /lib/modules/%{kernelversion}/kernel/fs/fuse
-
-%define kernelrel %(uname -r | sed -e s/-/_/g)
-%define real_release 6
-
-Name: owlib
+Name: owfs
 Version: @VERSION@
 Release: 1
 Summary: 1-Wire Virtual File System
 Source: %{name}-%{version}.tar.gz
 Copyright: GPL
-Group: Utilities/System
+Group: System Environment/Libraries
 URL: http://sourceforge.net/projects/owfs
 Buildroot: %{_tmppath}/%{name}-root
 Prefix: /usr
 Packager: Vadim Tkachenko <vt@freehold.crocodile.org>
-Requires: fuse = 1.0
 %description
 
 OWFS is a userspace virtual filesystem providing access to 1-Wire networks.
-owlib is a core library providing base functions to other OWFS modules.
 
+%package libs
+Summary: Core library providing base functions to other OWFS modules.
+Group: System Environment/Libraries
+Requires: libusb = 0.1.6, db4-devel = 4.0.14
+
+%description libs
+
+%{name}-libs is a core library providing base functions to other OWFS modules.
+
+%package fs
+Summary: Virtual filesystem on top of %{name}-libs providing access to 1-Wire networks.
+Group: System Environment/Libraries
+Requires: %{name}-libs = %{version}, fuse = 1.0
+
+%description fs
+
+%{name}-fs is a virtual filesystem on top of %{name}-libs providing access to 1-Wire networks.
+
+%package httpd
+Summary: HTTP daemon providing access to 1-Wire networks.
+Group: System Environment/Libraries
+Requires: %{name}-libs = %{version}
+
+%description httpd
+
+%{name}-httpd is an HTTP daemon on top of %{name}-libs providing access to 1-Wire networks.
 
 %clean
 case "$RPM_BUILD_ROOT" in *-root) rm -rf $RPM_BUILD_ROOT ;; esac
@@ -29,7 +47,7 @@ case "$RPM_BUILD_ROOT" in *-root) rm -rf $RPM_BUILD_ROOT ;; esac
 %setup
 
 %build
-./configure --prefix=%{prefix}
+./configure --enable-usb --enable-caching --enable-owfs --enable-owhttpd --prefix=%{prefix}
 make
 make check
 
@@ -45,7 +63,7 @@ make install \
 %postun -p /sbin/ldconfig
 
 
-%files
+%files libs
 %defattr(-,root,root)
 %doc README NEWS INSTALL ChangeLog AUTHORS COPYING
 
@@ -72,7 +90,7 @@ make install \
 %{prefix}/include/ow_2890.h
 %{prefix}/include/ow_cache.h
 %{prefix}/include/ow_devices.h
-%{prefix}/include/owlib_config.h
+%{prefix}/include/owfs_config.h
 %{prefix}/include/ow.h
 %{prefix}/include/ow_lcd.h
 %{prefix}/include/ow_link.h
@@ -80,6 +98,42 @@ make install \
 %{prefix}/include/ow_xxxx.h
 %{prefix}/include/ow_stats.h
 %{prefix}/include/ow_stub.h
+
+%files fs
+%defattr(-,root,root)
+
+%{prefix}/bin/owfs
+%{prefix}/include/owfs.h
+%{prefix}/man/man1/owfs.1.gz
+%{prefix}/man/man1/owhttpd.1.gz
+%{prefix}/man/man3/DS1822.3.gz
+%{prefix}/man/man3/DS18B20.3.gz
+%{prefix}/man/man3/DS18S20.3.gz
+%{prefix}/man/man3/DS1992.3.gz
+%{prefix}/man/man3/DS1993.3.gz
+%{prefix}/man/man3/DS1995.3.gz
+%{prefix}/man/man3/DS1996.3.gz
+%{prefix}/man/man3/DS2401.3.gz
+%{prefix}/man/man3/DS2405.3.gz
+%{prefix}/man/man3/DS2406.3.gz
+%{prefix}/man/man3/DS2408.3.gz
+%{prefix}/man/man3/DS2409.3.gz
+%{prefix}/man/man3/DS2415.3.gz
+%{prefix}/man/man3/DS2423.3.gz
+%{prefix}/man/man3/DS2436.3.gz
+%{prefix}/man/man3/DS2438.3.gz
+%{prefix}/man/man3/DS2450.3.gz
+%{prefix}/man/man3/DS2502.3.gz
+%{prefix}/man/man3/DS2505.3.gz
+%{prefix}/man/man3/DS2506.3.gz
+%{prefix}/man/man3/DS2890.3.gz
+%{prefix}/man/man3/LCD.3.gz
+         
+%files httpd
+%defattr(-,root,root)
+
+%{prefix}/bin/owhttpd
+%{prefix}/include/owhttpd.h
 
 %changelog
 

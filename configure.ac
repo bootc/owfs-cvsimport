@@ -183,7 +183,7 @@ fi
 
 AC_HEADER_DIRENT
 AC_HEADER_STDC
-AC_CHECK_HEADERS([fcntl.h stdlib.h string.h sys/file.h syslog.h termios.h unistd.h limits.h])
+AC_CHECK_HEADERS([fcntl.h netinet/in.h stdlib.h string.h sys/file.h syslog.h termios.h unistd.h limits.h])
 
 # Checks for typedefs, structures, and compiler characteristics.
 
@@ -201,10 +201,12 @@ AC_FUNC_FORK
 AC_FUNC_MALLOC
 AC_FUNC_MEMCMP
 AC_FUNC_MKTIME
+AC_FUNC_REALLOC
 AC_FUNC_SELECT_ARGTYPES
+AC_FUNC_STRFTIME
 AC_FUNC_STRTOD
 AC_TYPE_SIGNAL
-AC_CHECK_FUNCS([memchr memset select socket strchr strdup strncasecmp strtol strtoul])
+AC_CHECK_FUNCS([gettimeofday memchr memset select socket strcasecmp strchr strdup strncasecmp strtol strtoul])
 
 # Process config.h.in
 

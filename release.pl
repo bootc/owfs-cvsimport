@@ -1,6 +1,6 @@
 #!/usr/bin/perl -w
 #
-my $prefix = "../." ;
+my $prefix = "/home/owfs" ;
 my $pwd = `pwd 2> /dev/null` ;
 chomp($pwd) ;
 
